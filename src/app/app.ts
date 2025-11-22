@@ -10,7 +10,7 @@ import { Uxproducts } from './uxproducts';
   standalone: false,
   styleUrl: './app.css'
 })
-export class App implements OnInit {
+export class App  {
   // protected readonly title = signal('first-app-ngmodule');
   constructor(private _uxProducts:Uxproducts){}
   count = 0;
@@ -36,26 +36,27 @@ export class App implements OnInit {
 
 });
 
-this.fetchProducts();
+// this.fetchProducts();
    
   
   }
-   ngOnInit(): void {
-    this.fetchProducts();
-  }
-    fetchProducts(){
-      this._uxProducts.fetchProducts().subscribe({
-   next: (response) =>{ 
-    console.log(response)
-    const data = JSON.stringify(response);
-    console.log(data);
-    this.count = JSON.parse(data)
-    },
-   error: (err) => console.log(err)
+//    ngOnInit(){
+//     setInterval(()=> this.fetchProducts(), 1000);
+  
+//   }
+//     fetchProducts(){
+//     this._uxProducts.fetchProducts().subscribe({
+//     next: (response) =>{ 
+//     console.log(response)
+//     const data = JSON.stringify(response);
+//     console.log(data);
+//     this.count = JSON.parse(data)
+//     },
+//    error: (err) => console.log(err)
 
-})
+// })
 
-    } 
+    // } 
 
  
   }
